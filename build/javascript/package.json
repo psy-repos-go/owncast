@@ -5,14 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "@joeattardi/emoji-button": "^4.6.0",
-    "@videojs/http-streaming": "2.10.3",
     "@videojs/themes": "^1.0.1",
     "htm": "^3.1.0",
     "mark.js": "^8.11.1",
     "micromodal": "^0.4.6",
     "preact": "10.5.10",
     "tailwindcss": "^1.9.6",
-    "video.js": "7.15.4"
+    "video.js": "^7.15.4"
   },
   "devDependencies": {
     "cssnano": "^5.0.8",
@@ -21,9 +20,8 @@
   },
   "snowpack": {
     "install": [
-      "video.js/core.js",
+      "video.js/dist/video.min.js",
       "@videojs/themes/fantasy/*",
-      "@videojs/http-streaming/dist/videojs-http-streaming.min.js",
       "video.js/dist/video-js.min.css",
       "@joeattardi/emoji-button",
       "htm",
@@ -31,10 +29,7 @@
       "mark.js/dist/mark.es6.min.js",
       "tailwindcss/dist/tailwind.min.css",
       "micromodal/dist/micromodal.min.js"
-    ],
-    "alias": {
-      "video.js": "video.js/core.js"
-    }
+    ]
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
