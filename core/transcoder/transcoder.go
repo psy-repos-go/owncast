@@ -135,7 +135,7 @@ func (t *Transcoder) getString() string {
 	var port = t.internalListenerPort
 	localListenerAddress := "http://127.0.0.1:" + port
 
-	hlsOptionFlags := []string{}
+	hlsOptionFlags := []string{"program_date_time"}
 
 	if t.appendToStream {
 		hlsOptionFlags = append(hlsOptionFlags, "append_list")
