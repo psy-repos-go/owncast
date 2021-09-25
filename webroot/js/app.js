@@ -257,13 +257,6 @@ export default class App extends Component {
       configData: {
         ...data,
         summary: summary && addNewlines(summary),
-
-        // TESTING
-        federation: {
-          "enabled": true,
-          "account": "testing@ap-test.owncast.tv",
-          "followerCount": 12
-        }, // MOCK
       },
     });
   }
@@ -743,16 +736,13 @@ export default class App extends Component {
       ? null
       : html` <${VideoPoster} offlineImage=${logo} active=${streamOnline} /> `;
 
-
     // modal buttons
     const externalActionButtons =
-      externalActions &&
-      externalActions.length > 0 &&
       html`<div
         id="external-actions-container"
         class="flex flex-row flex-wrap justify-end"
       >
-        ${externalActions.map(
+        ${externalActions && externalActions.map(
           function (action) {
             return html`<${ExternalActionButton}
               onClick=${this.displayExternalAction}
