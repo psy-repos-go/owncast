@@ -120,6 +120,9 @@ func Start() error {
 	// Get a list of disabled users
 	http.HandleFunc("/api/admin/chat/users/disabled", middleware.RequireAdminAuth(admin.GetDisabledUsers))
 
+	// return followers
+	http.HandleFunc("/api/admin/followers", middleware.RequireAdminAuth(controllers.GetAdminFollowers))
+
 	// Get a list of pending follow requests
 	http.HandleFunc("/api/admin/followers/pending", middleware.RequireAdminAuth(admin.GetPendingFollowRequests))
 
